@@ -1,0 +1,10 @@
+#!/bin/bash
+
+docker run \
+  --rm \
+  --tty \
+  --network=host \
+  -v /private/var/folders:/private/var/folders:ro \
+  -v "$HOME":"$HOME":ro \
+  cbeier/phpmd \
+  phpmd "$@"
